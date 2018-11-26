@@ -3,10 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Key Detection</title>
-  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  <script type="text/javascript" src="https://www.iamcal.com/sharkify/sharkify.js" width="61" height="16"></script>
 </head>
 <body>
 <script>
+  const pressed = [];
+  const secretCode = 'preston'
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+    if(pressed.join('').includes(secretCode)) {
+      console.log('DING DING!')
+      sharkify_add();
+    }
+    console.log(pressed);
+  });
 </script>
 </body>
 </html>
